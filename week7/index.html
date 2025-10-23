@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Book Store</title>
+<style>
+body {
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 20px;
+background: #f8f9fa;
+color: #333;
+}
+h1 {
+text-align: center;
+margin-bottom: 30px;
+}
+h2 {
+margin-top: 40px;
+margin-bottom: 20px;
+color: #444;
+}
+/* Book grid */
+#book-list {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+list-style: none;
+padding: 0;
+}
+#book-list li {
+background: #fff;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+transition: transform 0.2s;
+}
+#book-list li:hover {
+transform: translateY(-5px);
+}
+#book-list strong {
+font-size: 18px;
+display: block;
+margin-bottom: 8px;
+}
+#book-list em {
+font-size: 13px;
+color: #777;
+}
+#book-list button {
+margin-top: auto;
+padding: 8px 12px;
+background: #007bff;
+border: none;
+border-radius: 8px;
+color: white;
+cursor: pointer;
+font-size: 14px;
+transition: background 0.2s;
+}
+#book-list button:hover:not(:disabled) {
+background: #0056b3;
+}
+#book-list button:disabled {
+background: #ccc;
+cursor: not-allowed;
+}
+/* Cart */
+#cart-container {
+background: #fff;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+margin-top: 20px;
+}
+#cart-list {
+list-style: none;
+padding: 0;
+margin: 0 0 15px 0;
+}
+#cart-list li {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px 0;
+border-bottom: 1px solid #eee;
+}
+#cart-list li:last-child {
+border-bottom: none;
+}
+#cart-list button {
+padding: 5px 10px;
+background: #dc3545;
+border: none;
+border-radius: 6px;
+color: white;
+cursor: pointer;
+font-size: 12px;
+transition: background 0.2s;
+}
+#cart-list button:hover {
+background: #b52b37;
+}
+#total-price {
+font-weight: bold;
+margin-top: 10px;
+font-size: 16px;
+}
+#checkout-btn {
+display: block;
+margin-top: 15px;
+padding: 10px 15px;
+background: #28a745;
+border: none;
+border-radius: 8px;
+color: white;
+cursor: pointer;
+font-size: 14px;
+transition: background 0.2s;
+}
+#checkout-btn:hover {
+background: #1e7e34;
+}
+</style>
+</head>
+<body>
+<h1> Modern Book Store</h1>
+<h2>Available Books</h2>
+<ul id="book-list"></ul>
+<h2>Your Shopping Cart</h2>
+<div id="cart-container">
+<ul id="cart-list"></ul>
+<p id="total-price">Total: $0.00</p>
+<button id="checkout-btn">Proceed to Checkout</button>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
